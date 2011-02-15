@@ -1,0 +1,61 @@
+!!!
+
+%head
+  %title Boativity
+  %style{:type => "text/css"}
+    :sass
+      body
+        font-family: "Helvetica", Arial
+        line-height: 1.8em
+        letter-spacing: -0.015em
+        background: #f4f4f4
+      ul
+        -moz-padding-start: 0
+        margin: 0
+        padding: 0
+      li
+        float: left
+        list-style-type: none
+        margin: 0 10px 0 0
+        padding: 0
+        color: #666
+      .container
+        margin: auto
+        width: 800px
+      .header, .footer
+        height: 30px
+        border: solid 1px #eee
+        margin: 20px 0 0 0
+        border-radius: 10px
+        -moz-border-radius: 10px
+        background: #fff
+        padding: 10px 20px
+      .info
+        margin: 20px 0 0 0
+        background: #3cf
+        height: 400px
+        background: #036
+      .selections
+        background: #e6e6e6
+        height: 80px
+        border: solid 1px #f3f3f3
+        ul
+          margin: 20px 0 0 0
+        li
+          width: 100px
+          text-align: center
+          color: #666
+          padding: 5px
+          background: #eee
+          margin: 0 0 10px 20px
+          border: solid 1px #eee
+     
+
+%body
+  .container
+    .header
+    .content
+      %h1 Justin Thibault
+      %a{:href => "github.com/justinvt"}
+        %h2 github.com/justinvt
+    .footer

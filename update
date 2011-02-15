@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+haml index.haml > index.html
+git add .
+git commit . -m "update"
+git push origin gh-pages
