@@ -1,0 +1,53 @@
+employment:
+  - employer: Agilent Technologies (formerly a division of Hewlett-Packard)
+    position: Mechanical Engineer Co-op
+    date: 
+      - "September 2000"
+      - "April 2001"
+    description: "Developed testing equipment to analyze efficacy of prototype parts for an upcoming line of gas chromatographs. This involved making professional presentations to supervisors and engineering staff."
+  - employer: Agilent Technologies
+    position: Mechanical Engineer Co-op 
+    date: 
+      - June 2002
+      - September 2002
+    description: "Performed cost reduction for Agilent's line of mass spectrometers through part modifications, substitutions. Produced attendant 3D documentation and process documentation."
+  - employer: Freelance Web Designer 
+    date: 
+      - January 2004
+      - May 2004
+    description: "Developed and maintained PHP based websites for several profit and non-profit corporations."
+  - employer: Seller's Door LLC
+    position: Owner
+    date: 
+      - May 2004
+      - September 2005
+    description: "Founded and operated, Seller's Door, the Philadelphia region's largest eBay drop-off stop in Bryn Mawr, PA. Over $300,000 in sales during first year of operation. Developed automated listing software to interface directly with eBay's API and to integrate auction information directly with out customer database. Featured on WTXF Fox News and in several local print publications."
+  - position: Freelance Web Developer
+    date: 
+      - September 2005
+      - June 2006
+    description: "Developed and maintained websites for several profit and non-profit corporations. (ex. williamwestphotography.com)"
+  - employer: ComeOver.com 
+    position: UI/UX Lead & Rails Developer
+    date: 
+      - September 2006
+      - November 2007
+    description: "Comeover.com was an open house listing service that provided an interface through which buyers/renters could search open houses in their area create a daily itinerary with directions between properties.  It also provided a means for realtors to produce virtual flyers for their property that could be posted to a third party site such as Craigslist.  I was responsible for the UI/UX and approximately half of the backend development and deployment.  You may contact Alex Mather as a reference (215-669-8354)."
+  - employer: IdeaBlob.com
+    position: Rails Developer
+    date: 
+      - November 2007
+      - December 2007
+    description: "I was asked to come in towards the end of this project to repair bugs, ensure cross browser compliance and add miscellaneous features immediately before launch."
+  - employer: Freshout Media
+    position: Rails Developer
+    date: 
+      - November 2007
+      - August 2009
+    description: "Single-handedly developed applications such as framebuilder.com and nooknack.com.  Served as tech lead for tweetyjobs.com, managing a team of 6-10 developers and designers while being responsible for all deployment and the development of several critical features."
+  - employer: Tweetyjobs.com
+    position: Rails Developer
+    date: 
+      - October 2009
+      - August 2010
+    description: "Continued work as tech lead of tweetyjobs.com, eventually becoming responsible for the construction/organization of a three person team that would become the fulltime, in-house  development staff.  My personal focus was typically directed toward large-scale system architecture concerns, such as designing the messaging queue (workling & starling), monit/nagios configuration for subsystems, database master/slave configuration and maintenance, and overall cluster design (system was set up as 7 CentOS  VMs built on top of two off-site Dell servers with VMWareâ€“ 2 batch servers, 3 app servers, 1 db master and 1 slave).  I was consistently developing components of the application with the rest of the team, as well."
