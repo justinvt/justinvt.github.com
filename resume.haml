@@ -1,0 +1,197 @@
+- require 'values'
+- require "bluecloth"
+!!!
+%html
+  %head
+    %title Justin Thibault / Resume
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %style{:type => "text/css"}
+      :sass
+        body
+          padding: 20px
+          line-height: 1.5em
+          font-size: 0.8em
+          font-family: Arial
+        h3
+          font-size: 2em
+          letter-spacing: -0.05em
+        h4
+          font-size: 1.2em
+          margin: 40px 0 20px 0
+        h5
+          font-size: 1.05em
+        li
+          list-style-type: none
+          margin: 5px 0
+          h5
+            display: inline
+        .coursework
+          h5
+            display: inline
+        .education
+          .stats
+            font-size: 1.1em
+        .section
+          margin: 30px 0
+          padding: 20px 20px
+          border-top: solid 1px #ccc
+        .contact
+          font-size: 1.2em
+          border-top: none
+          text-align: center
+          .name
+            font-weight: bold
+        .subjects, .highlight, .employ, .skillset
+          margin: 0 0 0 20px
+        .employ
+          .date
+            color: #aaa
+            font-weight: bold
+            padding: 0 0 10px 0
+            border-bottom: solid 1px #eee
+          .description
+            margin: 20px 0 50px 0
+            p
+              line-height: 1.5em
+              width: 50em
+          .title
+            margin-bottom: 10px
+
+            .employer
+              border-width: 0 1px 0 0
+              border-style: solid
+              border-color: #ccc
+              padding: 0 10px 0 0
+              margin: 0 10px 0 0
+              color: #999
+            .position
+              color: #000
+            div
+              display: inline
+
+
+  %body
+    .contact.section
+      .name
+        Justin Thibault
+      .email
+        %a{:href => "mailto:jvthibault@gmail.com"}= "jvthibault@gmail.com"
+      .street
+        1711 S. 6th St.
+      .locale
+        Philadelphia, PA 19148
+      .phone.mobile 
+        267.239.7804
+      .github
+        %a{:href => "http://github.com/justinvt"}= "http://github.com/justinvt"
+    
+    .education.section
+      %h3 Education
+      .stats
+        .degree B.S. Mechanical Engineering (BSME)
+        .institution Drexel University
+        .gpa Cumulative GPA - 3.94 (out of 4.0)
+        .note (Highest GPA out of graduating class)
+    
+      .coursework
+        .related
+          %h4 Related Coursework (Abridged for Clarity)
+          .subjects 
+            %h5 Physics 
+            (Statics, Dynamics, Fluid Mechanics, Thermodynamics 1 & 2, Heat Transfer, Gas/Plasma Dynamics)
+          .subjects 
+            %h5 Mathematics 
+            (Linear Algebra, Engineering Statistics, Differential Equations 1 & 2, Analog Control Theory 1 & 2, Discrete Control Theory 1 & 2)
+          .subjects 
+            %h5 Chemistry 
+            (Engineering Chemistry, Materials 1 & 2)
+    
+      
+        .highlights
+          %h4 Coursework Highlights
+          .highlight 
+            %h5 Hess Undergraduate Research Program
+            %p Selected along with 2 other ME students, based on academic excellence, to participate in graduate level research for 5 terms. Under the auspices of Dr. Jaydev Desai developed graphics architecture,TCP/IP software, and Linux drivers for a surgical simulator with haptic (touch) and graphic feedback. The haptic feedback could be generated artificially or sampled from real world materials via a remote force sensor, allowing the simulator to be used for remote surgical procedures. 
+    
+    .skills.section
+      %h3 Computer Skills
+
+      .programming_languages.skillset
+        %h4 Programming Languages / Databases
+        %ul
+          %li C++ (4 years) 
+          %li OpenGL 3D toolkit for C++ (4 Years) 
+          %li Javascript (Vanilla - 6 years / Jquery - 4 years)
+          %li Ruby / Rails up to 3.0 (4 Years)
+          %li PHP 4.0 - 5+ (3 Years) 
+          %li Flash MX Action-scripting(4 Years) 
+          %li Python (1 year of limited use), mostly web.py
+          %li Haskell, Lisp & Erlang used infrequently for personal/hobby projects
+          %li PostgreSQL (2 Years)
+          %li MySQL (7 Years) Installation & Configuration Experience in Windows, Linux & OSX
+
+      .operating_systems.skillset
+        %h4 Operating Systems
+        %ul
+          %li Win 95, 98, NT, XP
+          %li Mac OSX 10.4 onward
+          %li Linux/Unix (HP Unix, QNX RTOS, Ubuntu, Gentoo, Solaris, Centos and others) 
+
+      .software.skillset
+        %h4 Software
+        %ul
+          %li
+            %h5 DB Indexing:
+            Ferret, Sphinx (via ultrasphinx & thinking_sphinx - expert proficiency)
+          %li 
+            %h5 Messaging/Queue systems: 
+            Workling paired with Starling & RabbitMQ
+          %li 
+            %h5 Testing: 
+            BDD - Rspec & Cucumber, experience deploying CI servers
+          %li 
+            %h5 Virtualization: 
+            VMWare, Xen through Amazon EC2
+          %li 
+            %h5 Monitoring: 
+            Monit & Nagios with NRPE - Installation and configuration experience.  Experience developing Nagios plugins, and custom Monit schemes.
+          %li 
+            %h5 Templating: 
+            HAML & SASS
+          %li 
+            %h5 Deployment: 
+            Capitstrano - Experience developing custom capistrano recipes for our cluster of 7 VMs.
+
+    .employment.section
+      %h3 Employment Experience
+
+      - Resume["employment"].reverse.each do |emp|
+        .employ
+          %h4.title 
+            - unless emp["employer"].nil?
+              .employer= emp["employer"]
+            - unless emp["position"].nil?
+              .position= emp["position"]
+          .date
+            = emp["date"].to_a.join(" - ")
+          .description
+            = BlueCloth.new(emp["description"]).to_html
+
+    .awards.section
+      %h3 Honors and Awards
+      %ul
+        %li 
+          %h5 National Merit Scholar
+          Awarded to high-school students scoring in the top 0.5% of PSAT participants 
+        %li  
+          %h5 AJ Drexel Scholar
+          Highest academic scholarship awarded by Drexel 
+        %li  
+          %h5 Hess Scholar
+          Awarded by Drexel to an ME student showing exemplary performance in academics and industry 
+        %li  
+          %h5 First Honors
+          Mechanical Engineering - Highest Cumulative GPA in Drexel's graduating class of mechanical engineers. 
+        %li  
+          %h5 Also of Note
+          1 of less than 100 national participants awarded a perfect score (T) on writing section of April 2005 MCAT test for entrance into medical school (out of 28,000 partiipants). Total score 30T
