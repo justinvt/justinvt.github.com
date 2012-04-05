@@ -1,6 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
   <title>vg</title>
+  <link href='farbtastic.css' rel='stylesheet' />
+  <script src='jquery.js' type='text/javascript'></script>
+  <script src='farbtastic.js' type='text/javascript'></script>
+  <script src='palette.js' type='text/javascript'></script>
+  <script type='text/javascript'>
+    //<![CDATA[
+       $(document).ready(function(){ $(".pal").colorPicker() })
+    //]]>
+  </script>
   <style type='text/css'>
     body {
       font-family: "Helvetica", Arial;
