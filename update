@@ -4,4 +4,4 @@ haml index.haml > index.html
 #haml resume.haml > resume.html
 git add .
 git commit . -m "update"
-git push origin master
+git push origin gh-pages
