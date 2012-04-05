@@ -1,0 +1,51 @@
+body{
+  font-family:sans-serif;
+}
+.farbtastic {
+  position: relative;
+}
+.farbtastic * {
+  position: absolute;
+  cursor: crosshair;
+}
+.farbtastic, .farbtastic .wheel {
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .color, .farbtastic .overlay {
+  top: 47px;
+  left: 47px;
+  width: 101px;
+  height: 101px;
+}
+.farbtastic .wheel {
+  background: url(images/wheel.png) no-repeat;
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .overlay {
+ background: url(images/mask.png) no-repeat;
+
+}
+.farbtastic .marker {
+  width: 17px;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden; 
+  background: url(images/marker.png) no-repeat;
+}
+
+.colors, .palette{clear:left;float:left;width:100%;background:white;}
+.colors {width:100%;}
+.colors {}
+.colors .color, .palette .color{width:50px;height:50px;font-size:0;float:left;cursor:pointer}
+.palette{margin-top:20px;border:solid 10px #fff;}
+.hue{width:100%;clear:left;}
+.sat{float:left;}
+#full_palette{visibility:none;visibility: hidden;position:fixed;left:0;top:0;background:#fff;}
+#show_full{visibility: hidden;cursor:pointer;width:0px;height:0px;background:url("images/spectrum.png");position:fixed;top:0;right:0px;;}
+.closer{cursor:pointer;padding:5px;;position:absolute;top:0;right:0;}
+#color_picker{position:relative;top:40px;width:100%;z-index:1;padding:10px;}
+.current_color{visibility: hidden;background:#fff;-moz-border-radius:5px;border:solid 1px #ccc;cursor:pointer;width:7em;;font-size:1em;;position:absolute;height:30px;}
+.current_color .title{display:block;float:left;margin:5px 5px 0 0;}
+.current_color .swatch{width:12px;height:12px;border:solid 1px #ccc;float:left;;margin:6px 5px 0 10px;font-size:0;}
