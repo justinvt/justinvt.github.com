@@ -77,10 +77,25 @@ jQuery.fn.extend({
 			palette.append(hue_block);
 		
 			$.each(sats,function(j,m){
-				var sat_block = $("<div class='sat color' id='s_" + m.toString().replace(/[^0-9]/g,'') + "'>&nbsp;</div>")
-				sat_block.colorTransform("setHSL "+n + " " + m + " 0.5")
+				
+				var class_names = [
+					"sat",
+					"color",
+					["row",j].join("_"),
+					["column",i].join("_")
+				]
+				
+				var sat_block = 
+					$("<div class='" + 
+						class_names.join(" ") + 
+						"' id='s_" + 
+						m.toString().replace(/[^0-9]/g,'') + 
+						"'>&nbsp;</div>"
+					)
+				sat_block.colorTransform("setHSL "+ n + " " + m + " 0.6")
 				hue_block.append(sat_block)
 			})
+			
 		})
 				
 		$(this).append(palette)
@@ -88,8 +103,17 @@ jQuery.fn.extend({
 	//	if ($.browser.msie){hue_width+=20}
 		var sat_width = parseInt(hue_width/sat_increments);
 		var palette_colors =
-		$(".sat").add(".colors .color").add(".palette .color").width(sat_width).height(sat_width);
-		$(".sat").css({float:"left"})
+			$(".sat").add(".colors .color").add(".palette .color").width(sat_width).height(sat_width);
+			$(".sat").css({
+				float:"left",
+				"border-top-color": $(this).css("background-color"),
+				"border-top-width": sat_width + "px",
+				
+				"border-right-color": "#fff",
+				"border-right-width": sat_width + "px",
+				width: "0px",
+				height: "0px"
+			})
 		return $(this)
 	},
 	colorPicker: function(){
@@ -102,7 +126,7 @@ jQuery.fn.extend({
 			$("body").css("background",color);
 		});
 	
-		$("#color_picker").renderPalette(8,8,8);
+		$("#color_picker").renderPalette(15,15,15);
 		$("#color_picker,#full_palette").show();
 	
 		$(".current_color").click(function(){$("#color_picker").toggle();});
@@ -140,6 +164,42 @@ jQuery.fn.extend({
 		//$(".colors").find(".color").eq(0).trigger("click")
 	//		farb.setColor("#FFD3A8");
 		}
+		$(".color").each(function(){
+			
+			var parent_size = parseFloat(  
+				$(this).siblings().size() 
+			)
+			
+			var row =  $(this).attr("class").split(" ").filter(
+						function(e){ 
+							return e.match(/^row/g)
+						 }
+					 )
+			row = "string" == typeof row[0] ? row[0].split("_")[1] : 0
+					 
+		 	var column=  $(this).attr("class").split(" ").filter(
+		 						function(e){ 
+		 							return e.match(/^column/g)
+		 						 }
+		 					 )
+		 			row = "string" == typeof column[0] ? column[0].split("_")[1] : 0
+				
+	
+			var centrality =  Math.abs( ( parent_size / 2 ) - row ) / parent_size
+				 console.log(centrality )
+
+			
+			
+			
+			var chances = ( Math.random() >= 0.5 )
+			
+			chances ? 
+				0 :  
+				$(this).css({
+					background: "#fff"
+				})
+		
+		})
 
 		return farb
 	}
