@@ -126,7 +126,7 @@ jQuery.fn.extend({
 			$("body").css("background",color);
 		});
 	
-		$("#color_picker").renderPalette(15,15,15);
+		$("#color_picker").renderPalette(7,7,7);
 		$("#color_picker,#full_palette").show();
 	
 		$(".current_color").click(function(){$("#color_picker").toggle();});
