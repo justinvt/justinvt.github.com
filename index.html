@@ -1,101 +1,158 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 	<head>
-		<title>Justin Thibault / js / css / ruby / ux</title>
+		<title>Justin Thibault | Portfolio</title>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
 		<style>
-		body{
-			font-family:monospace;
+		body {
+			color: #333;
+			font-family: 'Open Sans';
+			padding: 0;
+			margin: 0;
 		}
-		h1{
-			margin:100px auto auto auto;
-			text-align:center;
-			font-weight:normal;
-			text-transform:uppercase;
+		div {
+			padding: 1em 0;
+			margin: 0;
 		}
-		h1 a{
-			font-size:2em;
-			text-transform:uppercase;
-			color:#47b;
-			text-decoration: none;
+		
+		h1 {
+			font-size: 2.5em;
+			margin: 0;
+			letter-spacing: -0.05em;
+			font-weight: normal;
+			display: inline;
+			background: none;
+			padding: 0px;;
+			border-right: solid 0px none;
 		}
-		h1 a:hover{
-			color:#fff;
-			background:#ff0;
+		h1 span{
+			display:none;
+			font-size:0.8em;
+			color:#ccc;
+			border-left:solid 1px #ccc;
+			padding:0 0 0 0.5em;
+			margin:0 0 0 0.5em
 		}
-		.pal{
-			width:640px;
-			margin:200px auto auto auto
+		
+		h3 {
+			color: #fff;
+			padding:0;
+			margin: 0 0 0 0;
+			font-size: 1.8em;
+			font-weight: bold;
+		
 		}
-		.farbtastic {
-		  position: relative;
+	
+		#header {
+			background: none;
+			color: #000;
+			border-bottom: solid 2px #ddd;
+			padding: 2em;
+			min-width: 650px;
 		}
-		.farbtastic * {
-		  position: absolute;
-		  cursor: crosshair;
+		ul {
+			float: right;
+			margin: 0.5em 1em 0 0;
 		}
-		.farbtastic, .farbtastic .wheel {
-		  width: 195px;
-		  height: 195px;
-		}
-		.farbtastic .color, .farbtastic .overlay {
-		  top: 47px;
-		  left: 47px;
-		  width: 101px;
-		  height: 101px;
-		}
-		.farbtastic .wheel {
-		  background: url(images/wheel.png) no-repeat;
-		  width: 195px;
-		  height: 195px;
-		}
-		.farbtastic .overlay {
-		 background: url(images/mask.png) no-repeat;
-
-		}
-		.farbtastic .marker {
-		  width: 17px;
-		  height: 17px;
-		  margin: -8px 0 0 -8px;
-		  overflow: hidden; 
-		  background: url(images/marker.png) no-repeat;
-		}
-
-		.colors, .palette{background:white;}
-		.colors {width:600px;}
-		.colors {}
-		.colors .color, .palette .color{
-			width:0px;
-			height:0px;
-			font-size:0;
-			float:left;
-			border-top:20px solid red;
-			border-right:20px solid red;
-		}
-		.palette{margin-top:0px;border:solid 0px #fff;}
-		.hue{width:100%;clear:left;}
-		.sat{float:left;}
-		#full_palette{visibility:none;visibility: hidden;position:fixed;left:0;top:0;background:#fff;}
-		#show_full{visibility: hidden;cursor:pointer;width:0px;height:0px;background:url("images/spectrum.png");position:fixed;top:0;right:0px;;}
-		.closer{cursor:pointer;padding:5px;;position:absolute;top:0;right:0;}
-		#color_picker{position:relative;top:0px;width:100%;z-index:1;padding:0px;}
-		.current_color{display:none;;background:#fff;-moz-border-radius:5px;border:solid 1px #ccc;cursor:pointer;width:7em;;font-size:1em;;position:absolute;height:0px;}
-		.current_color .title{display:block;float:left;margin:5px 5px 0 0;}
-		.current_color .swatch{width:12px;height:12px;border:solid 1px #ccc;float:left;;margin:6px 5px 0 10px;font-size:0;}
-		</style>
-		<script type='text/javascript' src="jquery.js"></script>
-		<script type='text/javascript' src="farbtastic.js"></script>
-		<script type='text/javascript' src="palette.js"></script>
-		<script type='text/javascript'>
-			$(document).ready(function(){
-				$(".pal").colorPicker()
-			})
+		li {
+			display: inline;
+			margin: 0 0 0 1em;}
 			
-		</script>
+		a{font-weight:bold;color:#4ad;font-size:1.1em;text-decoration:none;padding:0 0.2em;}
+		a:visited{color:#daa}
+		a:hover{background:#4ad;color:#fff;}
+		
+		#design{;margin:0 5em;padding:0.5em;width:auto;}
+		
+		.project{
+			margin:3em 3em 0 0;
+			padding:2em 2em 2em 2em;
+			width:600px;
+			float:left;
+			clear:right;
+			color:#fff;
+			height:400px;
+		}
+		.project img{
+			width:200px;
+			height:200px;
+			margin:0 0 2em 2em;
+			float:right;
+		}
+		.project p{
+			color:#eee;
+			margin:1em 0 0 0;
+	
+			font-size:1.2em;
+			line-height:1.6em;
+		
+		}
+		.cleaner{clear:left;clear:right;}
+		
+		.project, .project img{
+			/*
+			border-width:20px;
+			border-style:solid;
+			*/
+		}
+		
+		img{border:solid 3px #fff;;}
+		
+		#comeover, #comeover img{
+			border-color:#aaffbb;
+			background:#5a7
+		}
+		#sellersdoor, #sellersdoor img{
+			border-color:#ccd9ee;
+			background:#38f
+		}
+		#tweetyjobs, #tweetyjobs img{
+			border-color:#eed2d2;
+			background:#ff6677
+		}
+		#scenechat, #scenechat img{
+			border-color:#eeaadd;
+			background:#a57
+		}
+		
+
+		</style>
 	</head>
 	<body>
-		<h1><a href='https://github.com/justinvt'>Justin Thibault</a></h1>
-		<div>
-		<div class='pal'></div>
+		<div id="header">
+			<h1 id="logo">Justin Thibault <span>Portfolio</span></h1>
+			<ul>
+				<li><a href="https://www.linkedin.com/in/justinvt?trk=prof-samename-picture">about</a></li>
+				<li><a href="mailto:jvthibault@gmail.com">contact</a></li>
+				<li><a href="https://justinvt.github.io/resume">resumé</a></li>
+				<li><a href="http://github.com/justinvt" target="blank">github (code)</a></li>
+			</ul>
+		</div>
+		<div id="design" class="work">
+			<div class="project" id="sellersdoor">
+				<img src="https://raw.githubusercontent.com/justinvt/justinvt.github.com/master/sd_thumb.png"/>
+				<h3>Seller's Door</h3>
+				<p>Founded and operated, Seller's Door, the Philadelphia region's largest eBay drop-off stop in Bryn Mawr, PA. Over $300,000 in sales during first year of operation. I developed automated listing software to post  photographs and item descriptions directly to ebay, and record customer information.</p>
+				
+			</div>
+			<div class="project" id="tweetyjobs">
+				<img src="https://raw.githubusercontent.com/justinvt/justinvt.github.com/master/tweety_thumb.png"/>
+				<h3>TweetyJobs</h3>
+				<p>I developed and deployed tweetyjobs.com, a career listing site centered around Twitter.  As the lead engineer, I developed the site's automated resume parsing service, which populated a job seeker's online profile with pertinent skills, employment experience, and education </p>
+				
+			</div>
+			<div class="project" id="scenechat">
+				<img src="https://raw.githubusercontent.com/justinvt/justinvt.github.com/master/scenechat_thumb.png"/>
+				<h3>SceneChat</h3>
+				<p>Application to allow real time conversations / social interaction for internet video, amenable to most web based video platforms. Cursory UX work and bug fixing.</p>
+				
+			</div>
+			<div class="project" id="comeover">
+				<img src="https://raw.githubusercontent.com/justinvt/justinvt.github.com/master/comeover_thumb.png"/>
+				<h3>ComeOver</h3>
+				<p> Comeover was an apartment listing service, giving potential renters the ability to create convenient itineraries to view multiple properties in a single day.  I was responsible for the UI/UX and the backend development and deployment</p>
+				
+			</div>
 		</div>
 	</body>
 </html>
