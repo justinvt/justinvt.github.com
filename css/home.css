@@ -1,0 +1,13 @@
+h1{text-transform:uppercase}
+.container {width:800px;margin:auto}
+.nav{float:right;clear:right;margin:40px 0 0 0}
+.nav *{text-align:right}
+
+.aside{
+position:absolute;
+margin-left:-20em;
+width:17em;
+background:#ddd;
+padding:3px;
+font-size:0.8em;
+}

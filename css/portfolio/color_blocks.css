@@ -1,0 +1,110 @@
+body {
+	color: #333;
+	font-family: 'Open Sans';
+	padding: 0;
+	margin: 0;
+}
+div {
+	padding: 1em 0;
+	margin: 0;
+}
+
+h1 {
+	font-size: 2.5em;
+	margin: 0;
+	letter-spacing: -0.05em;
+	font-weight: normal;
+	display: inline;
+	background: none;
+	padding: 0px;;
+	border-right: solid 0px none;
+}
+h1 span{
+	display:none;
+	font-size:0.8em;
+	color:#ccc;
+	border-left:solid 1px #ccc;
+	padding:0 0 0 0.5em;
+	margin:0 0 0 0.5em
+}
+
+h3 {
+	color: #fff;
+	padding:0;
+	margin: 0 0 0 0;
+	font-size: 1.8em;
+	font-weight: bold;
+
+}
+
+#header {
+	background: none;
+	color: #000;
+	border-bottom: solid 2px #ddd;
+	padding: 2em;
+	min-width: 650px;
+}
+ul {
+	float: right;
+	margin: 0.5em 1em 0 0;
+}
+li {
+	display: inline;
+	margin: 0 0 0 1em;}
+	
+a{font-weight:bold;color:#4ad;font-size:1.1em;text-decoration:none;padding:0 0.2em;}
+a:visited{color:#daa}
+a:hover{background:#4ad;color:#fff;}
+
+#design{;margin:0 5em;padding:0.5em;width:auto;}
+
+.project{
+	margin:3em 3em 0 0;
+	padding:2em 2em 2em 2em;
+	width:600px;
+	float:left;
+	clear:right;
+	color:#fff;
+	height:400px;
+}
+.project img{
+	width:200px;
+	height:200px;
+	margin:0 0 2em 2em;
+	float:right;
+}
+.project p{
+	color:#eee;
+	margin:1em 0 0 0;
+
+	font-size:1.2em;
+	line-height:1.6em;
+
+}
+.cleaner{clear:left;clear:right;}
+
+.project, .project img{
+	/*
+	border-width:20px;
+	border-style:solid;
+	*/
+}
+
+img{border:solid 3px #fff;;}
+
+#comeover, #comeover img{
+	border-color:#aaffbb;
+	background:#5a7
+}
+#sellersdoor, #sellersdoor img{
+	border-color:#ccd9ee;
+	background:#38f
+}
+#tweetyjobs, #tweetyjobs img{
+	border-color:#eed2d2;
+	background:#ff6677
+}
+#scenechat, #scenechat img{
+	border-color:#eeaadd;
+	background:#a57
+}

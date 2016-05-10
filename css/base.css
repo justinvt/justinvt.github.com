@@ -1,0 +1,17 @@
+*{margin:0;padding:0;}
+body,html{font-family:"Arial";line-height:1.8em;font-size:0.85em}
+h1,h2,h3,h4,h5,h6{font-weight:normal;letter-spacing:-0.005em}
+.container{padding:10px}
+h1,h2,h3{margin:1em 0 0 0}
+h1{font-size:2em}
+h2{font-size:1.5em}
+h3{font-size:1.25em}
+p {width:35em;margin:1em 0 1.5em 0}
+a{color:#408}
+a:hover{text-decoration:none;color:#88f}
+a:visited{color:#804}
+a:focus{outline:none}
+.cleaner{clear:both}
+li{margin-top:0.25em;list-style-type:none}
+ul{padding:0.5em 0;margin-bottom:0.5em}
+.awesome{text-transform:uppercase;margin:1em auto 0 auto}

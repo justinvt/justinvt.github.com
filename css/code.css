@@ -1,0 +1,21 @@
+h1,h2,h3,h4{text-transform:capitalize}
+.code {width:40em}
+.code .date {color:#999;font-size:0.8em}
+.code .snippet{background:#ffc;color:#663}
+.code .prototype{background:#cff;color:#366;text-align:center;}
+.code .example{background:#fcf;color:#636}
+.code .snippet, .code .prototype, .code .example{
+display:block;
+width:100%;
+font-weight:bold;
+font-size:0.75em
+}
+.code ol{
+margin-left:30px
+}
+pre{
+width:100%;
+line-height:1em;
+background:#ddd;
+font-size:0.8em
+}
