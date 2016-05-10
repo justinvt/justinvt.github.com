@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta name="consciousness" content="7.0"/>
+<meta name="multiverse" content="q"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="http://jthibault.com/css/base.css"/>	
+<link rel="stylesheet" type="text/css" href="http://jthibault.com/css/code.css"/>
+<title>Justin Thibault > Ruby</title> 
+</head>
+<body>
+<div class="container">
+<div class="code rails">
+<span class="date">created 4.28.2007</span>
+<h1>Rails Calendar Helper with Builder</h1>
+<h2>structure</h2>
+<div class="prototype">calendar(date, events{}, options{})</div>
+<h2>example</h2>
+<div class="example">date_to_use = Date.civil(2007,4,22)</div>
+<div class="example">events={Date.today=>"My gay picnic", Date.today + 1 => "Slapfest 2026" }</div>
+<div class="example">calendar(date_to_use, events)</div>
+<p>This will generate a calendar for April, 2007, and if Date.today or Date.today + 1 occur in that month, they will
+show up on their respective dates.</p>
+<h2>arguments</h2>
+<div class="paramter"><h3>date</h3>date object belonging to the month for which you'd like a calendar generated</div>
+<div class="paramter"><h3>events</h3>hash, with a structure like this <span class="snippet">{date1=>"I am an event",date2=>"Me too"}</span> where date1 and date2 are date objects, and text is the content you wish to assign to that date</div>
+<div class="paramter" id="options"><h3>options</h3>
+<p>The most important option is the <b>:format</b> option, which allows us to choose what type of xml/xhtml/html tags we'd like the calendar to use.  By default a set of table tags is used, but they can be replaced by anything, including xml tags</p>
+<span class="snippet structure">calendar > month, week, and day_of_week heading container > days > day number > events</span>
+<span class="snippet example default">default -> :format=>"table>tr>td>span>span"</span>
+<span class="snippet example alternative">:format=>"div>div>div>div>span"</span>
+</div>
+<h2>notes</h2>
+<p>This helper requires the inclusion of the <a href='http://api.rubyonrails.org/classes/Builder/XmlMarkup.html'>Builder</a> gem to function properly (or at all).  I have found Builder to be an indispensible and unrivaled tool for creating neatly organized, readable xml and xhtml, and in this case it makes it really easy to customize the type of tags used.</p>
+<p>To use this code in your application, copy and paste the source into your <b class="helper">ApplicationHelper</b> or your <b class="helper">WhateverHelper</b>, where Whatever is the controller that will be in use when the calendar is output.  
+</p>
+<h2>source</h2>
+<pre>
+require 'builder'
+def calendar(date,events,options={})
+  options[:format]="table>tr>td>span>span" if options[:format].nil?
+  options[:heading_length]=3 if options[:heading_length].nil?
+  options[:title_format]="%B %Y" if options[:title_format].nil? 
+  format = options[:format].split(">")
+  dow=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"]
+  last_day =  Date.civil(date.year, date.month,-1)
+  first_day = Date.civil(date.year, date.month,1)
+  days_total = last_day.day + first_day.wday
+  weeks = (days_total.to_f / 7).ceil - 1
+  calendar = Builder::XmlMarkup.new(:indent => 1)
+  calendar.tag!(format[0], "class"=>"calendar"){
+    calendar.tag!(format[1],date.strftime(options[:title_format]),"class"=>"month")
+      calendar.tag!(format[1], "class"=>"week dow"){
+      (0..6).each do |d|
+         calendar.tag!(format[2], dow[d][0..(options[:heading_length]-1)],"class"=>"day heading")
+      end}
+      (0..weeks).each do |week|
+        calendar.tag!(format[1], "class"=>"week"){
+        (0..6).each do |day|
+          observed_day = ((week*7)+day) - first_day.wday + 1
+          observed_day = 0 if (observed_day < 1 or observed_day > last_day.day)
+          css_class="day" + " dow_" + day.to_s
+          if Date.exist?(date.year,date.month,observed_day)
+            observed_date = Date.civil(date.year,date.month,observed_day)
+            css_class << " today" if observed_date == Date.today
+            if events.include?(observed_date)
+              calendar.tag!(format[2], "class"=> css_class + " full"){
+              calendar.tag!(format[3], observed_day, "class"=>"day_num")
+              calendar.tag!(format[4],events[date], "class"=>"events")}
+            else
+              calendar.tag!(format[2], "class"=> css_class){
+              calendar.tag!(format[3],observed_day, "class"=>"day_num")}
+            end
+          else
+            calendar.tag!(format[2], "class"=> css_class+ " blank")
+          end
+        end}
+      end}
+end
+</pre>
+</div>
+</div>
+</body>
+</html>
