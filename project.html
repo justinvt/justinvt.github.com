@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>Justin Thibault | Portfolio</title>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<!--
+		<link rel="stylesheet" type="text/css" href="css/portfolio/color_blocks.css" /> 
+-->
+		<link rel="stylesheet" type="text/css" href="css/portfolio/center.css" />
+		<style>
+
+
+		</style>
+		<script type="text/javascript">
+		var images = [
+			"01_homepage",
+			"02_employer_signup",
+			"03_employer_settings"
+		]
+		window.onload = function(){
+			for(var i=0;i<images.length;i++){
+				
+				var filename = [ "img", "tweetyjobs", images[i] + ".jpg" ].join("/");
+				var anchor = document.createElement("a");
+				var img = document.createElement("img");
+				
+				anchor.href = img.src = filename;
+				anchor.target = "_blank";
+				img.width = 400;
+				
+				anchor.appendChild(img);
+				//alert( img.src );
+				document.getElementById("detail").appendChild(anchor);
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<div class="navigation">
+			<h1 id="logo"><a href="/">Justin Thibault</a> <span>Portfolio</span></h1>
+			<ul>
+				<li><a href="#">about</a></li>
+				<li><a href="#">contact</a></li>
+				<li><a href="#">résumé</a></li>
+				<li><a href="http://github.com/justinvt" target="blank">github<span> (code)</span></a></li>
+			</ul>
+		</div>
+		<div class="detail" id="detail">
+			<h1>TweetyJobs</h1>
+		</div>
+	</body>
+</html>
