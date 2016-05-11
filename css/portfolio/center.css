@@ -28,6 +28,24 @@ h1 span{
 	padding:0 0 0 0.5em;
 	margin:0 0 0 0.5em
 }
+.navigation{margin:0;padding:0;}
+.navigation h1{
+	font-size:2em;
+	display:inline;
+	float:left;
+	margin:0 0 0 0;
+	padding:0.25em;
+	text-align:left;
+	width:600px;
+}
+.navigation ul{
+	width:500px;
+	display:inline;
+	float:right;
+	
+	text-align:right;
+
+}
 
 
 #header {
@@ -52,10 +70,22 @@ a{font-weight:bold;color:#2af;font-size:1.1em;text-decoration:none;padding:0 0.2
 a:visited{color:#daa}
 a:hover{background:#4ad;color:#fff;}
 
+h2{
+	
+}
 #design{
 	margin: 4em auto 0 auto;
 	padding:0.5em;
 	width:auto;
+}
+
+.detail{
+	margin:0 auto;
+	width:700px;
+}
+.detail h1{
+	text-align:left;
+	color:#000;
 }
 
 .project{
