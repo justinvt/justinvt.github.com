@@ -24,15 +24,15 @@
 			
 			var filename = [ "img", query, item + ".jpg" ].join("/");
 			var anchor = document.createElement("a");
-			var img = document.createElement("img");
 			
-			anchor.href = img.src = filename;
+			anchor.href = filename;
+			anchor.style.backgroundImage = "url('" + filename + "')"
 			anchor.target = "_blank";
-			img.width = 300;
-			
-			anchor.appendChild(img);
+
+		
 
 			document.getElementById("detail").appendChild(anchor);
+			
 		}
 
 		window.onload = function(){	
@@ -48,9 +48,6 @@
 			detail.appendChild(title)
 			detail.appendChild(description)
 			project.images.forEach(display_image)
-			
-			
-			
 				
 		}
 		</script>
