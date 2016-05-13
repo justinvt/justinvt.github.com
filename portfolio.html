@@ -22,17 +22,18 @@
 		
 		var display_image = function(item, index){
 			
-			var filename = [ "img", "tweetyjobs", item + ".jpg" ].join("/");
+			var filename = [ "img", query, item + ".jpg" ].join("/");
 			var anchor = document.createElement("a");
-			var img = document.createElement("img");
+			//var img = document.createElement("img");
 			
-			anchor.href = img.src = filename;
+			anchor.href = filename;
+			anchor.style.backgroundImage = "url('" + filename + "')"
 			anchor.target = "_blank";
-			img.width = 300;
-			
-			anchor.appendChild(img);
+
+		
 
 			document.getElementById("detail").appendChild(anchor);
+			
 		}
 
 		window.onload = function(){	
@@ -43,7 +44,7 @@
 			title.innerHTML =  project.title || query;
 			
 			var description = document.createElement("p")
-			description.innerHTML =  project.description
+			description.innerHTML =  project.description || projects.blank.description.replace(/\%project/i, project.title);
 			
 			detail.appendChild(title)
 			detail.appendChild(description)
@@ -59,9 +60,9 @@
 		<div class="navigation">
 			<h1 id="logo"><a href="/">Justin Thibault</a> <span>Portfolio</span></h1>
 			<ul>
-				<li><a href="#">about</a></li>
-				<li><a href="#">contact</a></li>
-				<li><a href="#">résumé</a></li>
+				<li><a href="https://www.linkedin.com/in/justinvt">about</a></li>
+				<li><a href="mailto:jvthibault@gmail.com">contact</a></li>
+				<li><a href="https://justinvt.github.io/resume">résumé</a></li>
 				<li><a href="http://github.com/justinvt" target="blank">github<span> (code)</span></a></li>
 			</ul>
 		</div>
