@@ -11,27 +11,47 @@
 
 
 		</style>
+		<script src="js/projects_data.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-		var images = [
-			"01_homepage",
-			"02_employer_signup",
-			"03_employer_settings"
-		]
-		window.onload = function(){
-			for(var i=0;i<images.length;i++){
+		
+	
+		
+		var query = location.search.replace(/\?/i, "");
+		var project = projects[query];
+		
+		
+		var display_image = function(item, index){
+			
+			var filename = [ "img", "tweetyjobs", item + ".jpg" ].join("/");
+			var anchor = document.createElement("a");
+			var img = document.createElement("img");
+			
+			anchor.href = img.src = filename;
+			anchor.target = "_blank";
+			img.width = 300;
+			
+			anchor.appendChild(img);
+
+			document.getElementById("detail").appendChild(anchor);
+		}
+
+		window.onload = function(){	
+			
+			var detail =  document.getElementById("detail")
+		
+			var title = document.createElement("h1")
+			title.innerHTML =  project.title || query;
+			
+			var description = document.createElement("p")
+			description.innerHTML =  project.description
+			
+			detail.appendChild(title)
+			detail.appendChild(description)
+			project.images.forEach(display_image)
+			
+			
+			
 				
-				var filename = [ "img", "tweetyjobs", images[i] + ".jpg" ].join("/");
-				var anchor = document.createElement("a");
-				var img = document.createElement("img");
-				
-				anchor.href = img.src = filename;
-				anchor.target = "_blank";
-				img.width = 400;
-				
-				anchor.appendChild(img);
-				//alert( img.src );
-				document.getElementById("detail").appendChild(anchor);
-			}
 		}
 		</script>
 	</head>
@@ -39,14 +59,14 @@
 		<div class="navigation">
 			<h1 id="logo"><a href="/">Justin Thibault</a> <span>Portfolio</span></h1>
 			<ul>
-				<li><a href="#">about</a></li>
-				<li><a href="#">contact</a></li>
+				<li><a href="https://www.linkedin.com/in/justinvt?trk=prof-samename-picture">about</a></li>
+				<li><a href="mailto:jvthibault@gmail.com">contact</a></li>
 				<li><a href="#">résumé</a></li>
 				<li><a href="http://github.com/justinvt" target="blank">github<span> (code)</span></a></li>
 			</ul>
 		</div>
 		<div class="detail" id="detail">
-			<h1>TweetyJobs</h1>
+			
 		</div>
 	</body>
 </html>
