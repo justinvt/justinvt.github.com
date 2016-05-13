@@ -28,16 +28,25 @@ h1 span{
 	padding:0 0 0 0.5em;
 	margin:0 0 0 0.5em
 }
-.navigation{margin:0;padding:0;}
+.navigation{margin:0;padding:0.25em;}
 .navigation h1{
-	font-size:2em;
+	font-size:1.5em;
 	display:inline;
 	float:left;
 	margin:0 0 0 0;
-	padding:0.25em;
+	padding:0.5em 1em 0.5em 1em;
 	text-align:left;
-	width:600px;
+	width:500px;
+	color:#666;
 }
+.navigation h1 a{color:#aaa;font-weight:normal;}
+.navigation h1 a:hover{color:#ccc;background:none;font-weight:normal;}
+
+.navigation h1 span{
+	display:none;
+}
+
+
 .navigation ul{
 	width:500px;
 	display:inline;
@@ -66,9 +75,9 @@ li {
 	
 li span {display:none;}
 	
-a{font-weight:bold;color:#2af;font-size:1.1em;text-decoration:none;padding:0 0.2em;}
-a:visited{color:#daa}
-a:hover{background:#4ad;color:#fff;}
+a{;color:#2af;font-size:1.1em;text-decoration:none;padding:0 0.2em;}
+ul a:visited{color:#eaa}
+ul a:hover{background:#4ad;color:#fff;}
 
 h2{
 	
@@ -80,12 +89,12 @@ h2{
 }
 
 .detail{
-	margin:0 auto;
+	margin:5em auto;
 	width:700px;
 }
 .detail h1{
 	text-align:left;
-	color:#000;
+	font-size:2.5em;
 }
 
 .project{
@@ -103,7 +112,7 @@ h2{
 	height:200px;
 	margin:1em 0 2em 2em;
 
-	border:solid 1px #ccc;
+	border:solid 2px #bcd;
 }
 .project p{
 	color:#000;
@@ -114,6 +123,7 @@ h2{
 
 
 .project h3 {
+	letter-spacing: -0.05em;
 	color: #000;
 	padding:0 0 0.5em 0;
 	margin: 0 0 0em 300px;
