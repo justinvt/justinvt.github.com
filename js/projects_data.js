@@ -28,5 +28,7 @@ var projects = {
 		],
 		description : ""
 	},
-
+	blank: {
+		description: "I am in the process of seeking permission to use materials associated with %project at the moment.  In the meantime, feel free to contact me directly for further information."
+	}
 }
