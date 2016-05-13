@@ -25,31 +25,71 @@
 			var filename = [ "img", query, item + ".jpg" ].join("/");
 			var anchor = document.createElement("a");
 			
-			anchor.href = filename;
+			anchor.href = "#"//filename;
 			anchor.style.backgroundImage = "url('" + filename + "')"
-			anchor.target = "_blank";
-
-		
-
+			//anchor.target = "_blank";
+			anchor.addEventListener("click",function(){ foreground(filename) });
 			document.getElementById("detail").appendChild(anchor);
 			
 		}
+		
+		var foreground = function(url){
+	
+			var image, overlay, mask;
+			overlay = document.createElement("div");
+			mask = document.createElement("div")
+			image = document.createElement("img")
+			image.src = url
+			mask.id = "mask";overlay.id="overlay";
+			
+			mask.style.position = overlay.style.position = "absolute"
+			mask.style.top = overlay.style.top = mask.style.left = overlay.style.left = "0px"
+			mask.style.width = overlay.style.width = "100%"
+			
+			overlay.style.textAlign = "center"
+			overlay.style.height  = window.screen.height
+			
+			mask.style.height = "100%"
+			mask.style.opacity = "0.8"
+			mask.style.backgroundColor = "black"
+		
+			overlay.style.zIndex = 0
+			mask.style.zIndex = -1
+			image.style.zIndex = 1
+			
+		
+
+			overlay.appendChild(mask)
+			overlay.appendChild(image)
+		
+			overlay.addEventListener("click", function(){ document.body.removeChild(overlay) } )
+			
+			
+			document.body.appendChild(overlay)
+			if(image.width > window.screen.width){
+				mask.style.width = overlay.style.width = image.width + "px"
+			}
+		}
+		
 
 		window.onload = function(){	
+			
 			
 			var detail =  document.getElementById("detail")
 		
 			var title = document.createElement("h1")
 			title.innerHTML =  project.title || query;
+			title.addEventListener("click", function(){foreground("http://localhost/jthibault/img/tweetyjobs/01_homepage.jpg")});
 			
 			var description = document.createElement("p")
 			description.innerHTML =  project.description || projects.blank.description.replace(/\%project/i, project.title);
-			
+		
 			detail.appendChild(title)
 			detail.appendChild(description)
 			project.images.forEach(display_image)
 				
 		}
+		
 		</script>
 	</head>
 	<body>
