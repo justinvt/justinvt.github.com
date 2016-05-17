@@ -41,6 +41,15 @@ var projects = {
 		],
 		description : ""
 	},
+	nooknack: {
+		images:[
+			"nooknack_1",
+			"nooknack_2",
+			"nooknack_3",
+			"nooknack_4"
+		],
+		description : "Here are some screenshots of nooknack"
+	},
 	scenechat: {
 		title: "SceneChat",
 		images:[
