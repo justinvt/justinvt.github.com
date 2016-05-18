@@ -41,6 +41,18 @@ var projects = {
 		],
 		description : ""
 	},
+	framebuilder: {
+		title: "Framebuilder",
+		images:[
+			"framebuilder_1",
+			"framebuilder_2",
+			"framebuilder_3",
+			"framebuilder_4",
+			"framebuilder_5",
+			"framebuilder_6"
+		],
+		description : "Behold"
+	},
 	nooknack: {
 		images:[
 			"nooknack_1",
@@ -65,6 +77,6 @@ var projects = {
 		description : ""
 	},
 	blank: {
-		description: "I am in the process of seeking permission to use materials associated with %project at the moment.  In the meantime, feel free to contact me directly for further information."
+		description: "I am in the process of collecting materials associated with %project at the moment.  In the meantime, feel free to contact me directly for further information."
 	}
 }
