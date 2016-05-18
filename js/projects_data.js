@@ -33,7 +33,7 @@ var projects = {
 			//"29_jobseeker_savedjobs",
 			"30_informational"
 		],
-		description : "Here are some screenshots of tweety jobs"
+		description : "I developed and deployed tweetyjobs.com, a career listing site centered around Twitter.  As the lead engineer, I developed the site's automated resume parsing service, which populated a job seeker's online profile with pertinent skills, employment experience, and education."
 	},
 	sellersdoor: {
 		title: "Sellers Door",
@@ -51,7 +51,7 @@ var projects = {
 			"framebuilder_5",
 			"framebuilder_6"
 		],
-		description : "Behold"
+		description : "Framebuilder was a custom web application for a framing business.  Customers uploaded any image (for example a family photo or artwork), they selected a frames and mattes, and chose from a series of predetermined sizes.  The customer cropped and positioned their image within the frame, and the creators of Framebuilder printed the picture on large format canvas, framed it, and delivered it to the end user.  I developed all of the interactivity of the site, developed the front end website, created a RoR (Ruby on Rails) application to serve the front-end application, along with an administrative application for framebuilder to fulfill the orders."
 	},
 	nooknack: {
 		images:[
@@ -60,7 +60,7 @@ var projects = {
 			"nooknack_3",
 			"nooknack_4"
 		],
-		description : "Here are some screenshots of nooknack"
+		description : "I developed the UX/UI (user experience/interface) for nooknack, and created a RoR (Ruby on Rails) application to handle all functionality, and deployed the site to Amazon's Elastic Compute Cloud.  Part of this project involved integration with the <a href=http://www.floorplanner.com/>Floorplanner</a> API, allowing interior designers to mock up floorplans with furniture & accessories purchased through nooknack, along with a payment gateway, to accept credit card payment"
 	},
 	scenechat: {
 		title: "SceneChat",
@@ -77,6 +77,6 @@ var projects = {
 		description : ""
 	},
 	blank: {
-		description: "I am in the process of collecting materials associated with %project at the moment.  In the meantime, feel free to contact me directly for further information."
+		description: "I am in the process of seeking permission to use materials associated with %project at the moment.  In the meantime, feel free to contact me directly for further information."
 	}
 }
