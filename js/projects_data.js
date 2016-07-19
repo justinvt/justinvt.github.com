@@ -35,6 +35,13 @@ var projects = {
 		],
 		description : "I developed and deployed tweetyjobs.com, a career listing site centered around Twitter.  As the lead engineer, I developed the site's automated resume parsing service, which populated a job seeker's online profile with pertinent skills, employment experience, and education."
 	},
+	thrive: {
+		title: "Thrive Literacy",	
+		images:[
+			"thrive_1"
+		],
+		description: "Cleaning up existing website, incorproated bootstrap framework into redesigned pages, and serialized/strandardized Thrive's data.  The new site was written in Sinatra, a ruby framework."
+	},
 	sellersdoor: {
 		title: "Sellers Door",
 		images:[
