@@ -40,7 +40,7 @@ var projects = {
 		images:[
 			"thrive_1"
 		],
-		description: "Cleaning up existing website, incorproated bootstrap framework into redesigned pages, and serialized/strandardized Thrive's data.  The new site was written in Sinatra, a ruby framework."
+		description: "Cleaning up existing website, incorporated bootstrap framework into redesigned pages, and serialized/standardized Thrive's data.  The new site was written in Sinatra, a ruby framework."
 	},
 	sellersdoor: {
 		title: "Sellers Door",
